@@ -74,18 +74,31 @@ def Search(head,n):
         print("Element NOT FOUND")
 
 
-def Deletion(head):
-    n = 3
+def Deletion(head, index):
+    if head is None:
+        print("List is empty.")
+        return head
+
     temp = head
 
-    for i in range(n):
-        prev = temp.next
-        temp = prev.next
-        temp1 = temp.next
+    if index == 0:
+        head = temp.next
+        temp = None
+        return head
 
-    prev.next = temp1
-    print("delted")
-    print(temp.data)
+    for i in range(index - 1):
+        temp = temp.next
+        if temp is None:
+            break
+
+    if temp is None or temp.next is None:
+        print("Index out of range.")
+        return head
+
+    next = temp.next.next
+    temp.next = None
+    temp.next = next
+    return head
 
 
 head = None
@@ -106,12 +119,7 @@ enter your choise:: '''))
             Display(head)
         case 2:
             data = int(input("Enter data to insert at End:: "))
-            head = InsertEnd(head,data)
-            # head = InsertEnd(head,20)  
-            # head = InsertEnd(head,30)  
-            # head = InsertEnd(head,40)  
-            # head = InsertEnd(head,50)  
-
+            head = InsertEnd(head,data) 
         case 3:
             data = int(input("Enter data to insert at first:: "))
             head = InsertBeg(head,data)
@@ -122,7 +130,8 @@ enter your choise:: '''))
             n = int(input("Enter the number you want to search:: "))
             Search(head,n)
         case 6:
-            Deletion(head)
+            n = int(input("Enter the index for deletion: "))
+            head = Deletion(head,n)
         case 0: 
             break
         case _:

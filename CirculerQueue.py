@@ -13,7 +13,7 @@ class CirculerQueue:
             self.CQueue[self.rear] = n
             self.rear = (self.rear + 1) % MAX
             print("One Item Added!")
-        self.display()
+        # self.display()
 
     def deletion(self):
         if (self.front == self.rear):
@@ -22,7 +22,7 @@ class CirculerQueue:
             n = self.CQueue[self.front]
             self.front = (self.front + 1) % MAX
             print(n , " is Deleted")
-        self.display()
+        # self.display()
 
 
     def display(self):
@@ -32,23 +32,22 @@ class CirculerQueue:
             print("***QUEUE***")
             i = self.front
             while(i != self.rear):
-                print(self.CQueue[i],end="--")
+                print(self.CQueue[i],end=", ")
                 i = (i + 1) % MAX
 
 
 Q = CirculerQueue()
-
-while True:
-    ch = int(input('''
-Press: 1 for insert
+print ('''Press: 1 for insert
 Press: 2 for delete
 press: 3 for display
-press: 0 for exit
-enter your choice:: '''))
+press: 0 for exit''')
+
+while True:
+    ch = int(input('''enter your choice:: '''))
     
     if(ch == 1):
         n = int(input("Enter data: "))
-        Q.insertion(n)
+        Q.insertion(n) 
     elif(ch == 2):
         Q.deletion()
     elif ch == 3:

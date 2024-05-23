@@ -1,12 +1,14 @@
 from array import *
-Max = 5
 
 class QueueArray:
-    queue = array('i', [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])
-    rear = -1
-    front  = -1
+    def __init__(self, Max):
+        self.Max = Max
+        self.queue = array('i', [0] * self.Max)
+        self.rear = -1
+        self.front  = -1
+
     def insertion(self,n):
-        if (self.rear == Max -1):
+        if (self.rear == self.Max -1):
             print('queue overflow:')
         else:
             self.rear += 1
@@ -27,15 +29,15 @@ class QueueArray:
             for i in range(self.front+1,self.rear+1):
                 print(self.queue[i],end=", ")
 
-Q = QueueArray()
-
-while True:
-    ch = int(input('''
+Q = QueueArray(4)
+print('''
 Press: 1 for insert
 Press: 2 for delete
 press: 3 for display
 press: 0 for exit
-enter your choise:: '''))
+''')
+while True:
+    ch = int(input('''enter your choise:: '''))
     
     if(ch == 1):
         n = int(input("Enter data: "))

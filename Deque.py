@@ -2,14 +2,11 @@ from array import *
 
 class DoubleEndedQue:
     def __init__(self,max):
-        self.duque = array('i',[0] * max)
         self.Max = max
+        self.deque = array('i',[0] * self.Max)
         self.front = -1
         self.rear = -1
 
-
-    def isFull(self):
-        return self.rear == self.Max - 1
         
     def isEmpty(self):
         return self.front == self.rear
@@ -18,46 +15,47 @@ class DoubleEndedQue:
         if self.front == -1:
             print("inserting not possible")
         else:
+            self.deque[self.front] = n
             self.front = self.front - 1
-            self.duque[self.front] = n
-            print(n, " Inserted at End Successfully")
-        self.display()
+            print(n, " Inserted at front Successfully")
+        # self.display()
         
     def EnQueueRear(self,n):
-        if self.isFull():
+        if self.rear == self.Max - 1:
             print("Queue is Already Full !!!")
         else:
-            self.duque[self.rear] = n
             self.rear = self.rear + 1
+            self.deque[self.rear] = n
             print(n, " Inserted at End Successfully")
-        self.display()
+        # self.display()
 
     def DeQueueFont(self):
         if self.isEmpty():
             print("Queue is Empty !!!")
         else:
-            n = self.duque[self.front]
             self.front = self.front + 1
+            n = self.deque[self.front]
             print(n, " is Deleted from the Start Successfully")
-        self.display()
+        # self.display()
 
     def DeQueueRear(self):
         if self.isEmpty():
             print("Queue is Empty !!!")
         else:
+            n = self.deque[self.rear]
             self.rear = self.rear - 1
-            n = self.duque[self.rear]
-            print(n, " is Deleted from the Start Successfully")
-        self.display()
+            print(n, " is Deleted from the End Successfully")
+        # self.display()
 
     def display(self):
         if self.isEmpty():
             print("Queue is Empty !!!")
         else:
-            i = self.front 
-            while(i < self.rear):
-                print(self.duque[i],end="--")
+            i = self.front + 1
+            while(i <= self.rear):
+                print(self.deque[i],end=",")
                 i = i + 1
+
 
 DE = DoubleEndedQue(8)
 

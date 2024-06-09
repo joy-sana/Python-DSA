@@ -3,19 +3,14 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
-
 def insertFront(head,n):
     temp = head
     newnode = Node(n)
     newnode.right = temp
-    
     if temp != None:
         temp.left = newnode
-    
     head = newnode
     return head
-    
-
 def insertEnd(head,n):
     temp = head
     if temp == None:
@@ -29,62 +24,46 @@ def insertEnd(head,n):
         prev.right = newnode
         newnode.left = prev
         return head
-
-
-
-
+def display(head):
+    temp = head
+    if temp == None:
+        print("Empty list")    
+    while(temp):
+        print(temp.data)
+        temp = temp.right
 def deletion(head,n):
     temp = head
-
     #if list is empty
     if temp == None:
         print("Empty List")
-        return head
-    
+        return head    
     #if element found in 1st node
     elif(temp.data == n):
         print(n, " Deleted")
-
         if (temp.right == None):
             head = None
         else:
             head = temp.right
             head.left = None
-        return head
-    
+        return head    
     else:
         prev = temp
         temp = prev.right
-
         while(temp):
             if(temp.data == n):
-
                 if(temp.right!=None):
                     nitem = temp.right
                     prev.right = nitem
                     nitem.left = prev
                 else:
-                    prev.right = None
-                
+                    prev.right = None                
                 print(temp.data, " Deleted")
                 return head
             prev = temp
             temp = temp.right
         print("item not found")
-        return head
+        return head    
 
-        
-
-
-
-def display(head):
-    temp = head
-    if temp == None:
-        print("Empty list")
-    
-    while(temp):
-        print(temp.data)
-        temp = temp.right
 
 def count(head):
     temp = head
@@ -93,7 +72,6 @@ def count(head):
         count += 1
         temp = temp.right
     return count
-
 def search(head,key):
     temp = head
     count = 0

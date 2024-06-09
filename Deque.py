@@ -1,16 +1,12 @@
 from array import *
-
 class DoubleEndedQue:
     def __init__(self,max):
         self.Max = max
         self.deque = array('i',[0] * self.Max)
         self.front = -1
         self.rear = -1
-
-        
     def isEmpty(self):
         return self.front == self.rear
-
     def EnQueueFont(self,n):
         if self.front == -1:
             print("inserting not possible")
@@ -18,8 +14,6 @@ class DoubleEndedQue:
             self.deque[self.front] = n
             self.front = self.front - 1
             print(n, " Inserted at front Successfully")
-        # self.display()
-        
     def EnQueueRear(self,n):
         if self.rear == self.Max - 1:
             print("Queue is Already Full !!!")
@@ -27,8 +21,6 @@ class DoubleEndedQue:
             self.rear = self.rear + 1
             self.deque[self.rear] = n
             print(n, " Inserted at End Successfully")
-        # self.display()
-
     def DeQueueFont(self):
         if self.isEmpty():
             print("Queue is Empty !!!")
@@ -36,8 +28,6 @@ class DoubleEndedQue:
             self.front = self.front + 1
             n = self.deque[self.front]
             print(n, " is Deleted from the Start Successfully")
-        # self.display()
-
     def DeQueueRear(self):
         if self.isEmpty():
             print("Queue is Empty !!!")
@@ -45,8 +35,6 @@ class DoubleEndedQue:
             n = self.deque[self.rear]
             self.rear = self.rear - 1
             print(n, " is Deleted from the End Successfully")
-        # self.display()
-
     def display(self):
         if self.isEmpty():
             print("Queue is Empty !!!")

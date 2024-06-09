@@ -3,13 +3,11 @@ class Node:
         self.left = None
         self.right = None
         self.data = key
-
 def insert(root, key):
     if(root==None):
         return Node(key)
     else:
         current = root
-
         while(current):
             if(current.data==key):
                 print("Data already present")
@@ -19,22 +17,32 @@ def insert(root, key):
                 current = current.left
             else:
                 current = current.right
-
         temp = Node(key)
-
         if(prev.data>key):
             prev.left = temp
         else:
             prev.right = temp
-
         return root
-
+def inorder(root):
+    if(root):
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+def preorder(root):
+    if(root):
+        print(root.data)
+        preorder(root.left)
+        preorder(root.right)
+def postorder(root):
+    if(root):
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data)
 def search(root, key):
     if(root==None):
         print("Empty Tree")
         return
     temp = root
-
     while(temp):
         if(temp.data==key):
             print("Data found")
@@ -44,33 +52,11 @@ def search(root, key):
         else:
             temp = temp.right
     print("Data not found")
-
-
-def inorder(root):
-    if(root):
-        inorder(root.left)
-        print(root.data)
-        inorder(root.right)
-
-def preorder(root):
-    if(root):
-        print(root.data)
-        preorder(root.left)
-        preorder(root.right)
-
-def postorder(root):
-    if(root):
-        postorder(root.left)
-        postorder(root.right)
-        print(root.data)
-
 def max(root):
     temp = root
-
     while(temp.right!=None):
         temp = temp.right
     return temp.data
-
 def min(root):
     temp = root
     while (temp.left!=None):
@@ -95,7 +81,6 @@ def delete(root,key):
             temp = root.left
             root = None
             return temp
-    
         min_val = min(root.right)
         root.data = min_val.data
         root.right = delete(root.right,min_val.data)

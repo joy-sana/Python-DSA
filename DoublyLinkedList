@@ -1,0 +1,146 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+def insertFront(head,n):
+    temp = head
+    newnode = Node(n)
+    newnode.right = temp
+    
+    if temp != None:
+        temp.left = newnode
+    
+    head = newnode
+    return head
+    
+
+def insertEnd(head,n):
+    temp = head
+    if temp == None:
+        head = Node(n)
+        return head
+    else:
+        while(temp):
+            prev = temp
+            temp = temp.right
+        newnode = Node(n)
+        prev.right = newnode
+        newnode.left = prev
+        return head
+
+
+
+
+def deletion(head,n):
+    temp = head
+
+    #if list is empty
+    if temp == None:
+        print("Empty List")
+        return head
+    
+    #if element found in 1st node
+    elif(temp.data == n):
+        print(n, " Deleted")
+
+        if (temp.right == None):
+            head = None
+        else:
+            head = temp.right
+            head.left = None
+        return head
+    
+    else:
+        prev = temp
+        temp = prev.right
+
+        while(temp):
+            if(temp.data == n):
+
+                if(temp.right!=None):
+                    nitem = temp.right
+                    prev.right = nitem
+                    nitem.left = prev
+                else:
+                    prev.right = None
+                
+                print(temp.data, " Deleted")
+                return head
+            prev = temp
+            temp = temp.right
+        print("item not found")
+        return head
+
+        
+
+
+
+def display(head):
+    temp = head
+    if temp == None:
+        print("Empty list")
+    
+    while(temp):
+        print(temp.data)
+        temp = temp.right
+
+def count(head):
+    temp = head
+    count = 0
+    while(temp):
+        count += 1
+        temp = temp.right
+    return count
+
+def search(head,key):
+    temp = head
+    count = 0
+    while(temp):
+        count +=1
+        if (key == temp.data):
+            return count
+        temp = temp.right
+    return -1
+
+head = None
+while True:
+    print("**** Main Menu ****")
+    print("1. INSERT END")
+    print("2. DISPLAY")
+    print("3. INSERT FIRST")
+    print("4. COUNT")
+    print("5. SEARCH")
+    print("6. DELETION")
+    print("0. EXIT")
+
+    ch = int(input("Enter Your Choice: "))
+
+    match ch:
+        case 1:
+            n = int(input("Enter data: "))
+            head = insertEnd(head, n)
+        case 2:
+            display(head)
+        case 3:
+            n = int(input("Enter data: "))
+            head = insertFront(head, n)
+        case 4:
+            n = count(head)
+            if n > 0:
+                print("No. of elements=", n)
+        case 5:
+            n = int(input("Enter data which you want: "))
+            pos = search(head, n)
+            if pos > 0:
+                print("Item is in", pos, "th position")
+            else:
+                print("Item not found")
+        case 6:
+            n = int(input("Enter data which you want to delete: "))
+            head = deletion(head, n)
+        case 0:
+            break
+        case _:
+            print("wrong Choice:")

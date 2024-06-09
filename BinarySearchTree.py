@@ -77,6 +77,30 @@ def min(root):
         temp = temp.left
     return temp.data
 
+def delete(root,key):
+    if key < root.data:
+        if root.left:
+            delete(root.left,key)
+    elif key > root.data:
+        if root.right:
+            delete(root.right,key)
+    else:
+        if root.left is None and root.right is None:
+            return None
+        if root.left is None:
+            temp = root.left
+            root = None
+            return temp
+        if root.right is None:
+            temp = root.left
+            root = None
+            return temp
+    
+        min_val = min(root.right)
+        root.data = min_val.data
+        root.right = delete(root.right,min_val.data)
+    return root
+
 
 rootNode = None
 print("****Main Menu****")
@@ -87,6 +111,7 @@ print("4. Postorder")
 print("5. Search")
 print("6. Max data")
 print("7. Min data")
+print("8. Delete")
 print("0. EXIT")
 while True:
     ch = int(input("Enter Your Choice: "))
@@ -127,6 +152,9 @@ while True:
                 print("Min data=", n)
             else:
                 print("Empty Tree")
+        case 8:
+            n = int(input("Enter data to delete: "))
+            rootNode = delete(rootNode,n)
         case 0:
             break
         case _:

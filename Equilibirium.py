@@ -1,25 +1,27 @@
-
 # list1 = [1, 3, 5, 2, 2]
-# list1 = [-7, 2, 4, 9, -8, 1, 6]
-list1 = [-3,-1,-1,-1]
+# list1 = [-3,-1,-1,-1]
+list1 = [-7, 2, 4, 9, -8, 1, 6]
 
 def sum(j,listx):
     sum = 0
     for i in range(j,len(listx)):
         sum = sum + listx[i]
     return sum
-sumOfList = sum(0,list1)
 
 
-
-leftSum = i = 0
+leftSum = i = j = 0
 finalIndex = -1
-while( i < len(list1)):
-    k = 2 + i
+rightSum = sum(1,list1)
+
+while( i < len(list1) and  j < len(list1)-1):
+    j = i + 1
+    k = i + 2
     leftSum = leftSum + list1[i]
-    rightSum = sum(k,list1)
+    rightSum -= list1[j]
+    
  
-    # print(f"i: {i}, k: {k}, newlist: {leftSum}, rightlist: {rightSum}")
+    # print(f"i: {i}, k: {k}, leftlist: {leftSum}, rightlist: {rightSum}, sum of list: {sumOfList}")
+
     if leftSum == rightSum:
         finalIndex = k
     else:

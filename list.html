@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordered List Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: beige;
+            padding: 32px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+
+        .List-Container {
+            display: flex;
+            gap: 40px;
+            width: 600px;
+        }
+
+        .List-wrapper {
+            display: flex;
+            gap: 0px;
+            /* height: 200px; */
+            width: 600px;
+            flex-direction: column;
+        }
+
+        h5 {
+            margin: 0;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        ol,
+        ul,
+        dl {
+            width: 90px;
+            padding: 16px 32px;
+            padding-top: 0;
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 8px;
+        }
+
+        dl {
+            width: 200px;
+        }
+
+        .nested-list ol,
+        .nested-list ul,
+        .nested-list dl {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="List-Container">
+        <div class="List-wrapper Order">
+            <h3>Ordered List Example</h3>
+            <ol>
+                <h5>Type = default</h5>
+                <li>Papaya</li>
+                <li>Orange</li>
+                <li>Melon</li>
+                <li>Dates</li>
+                <li>Pear</li>
+            </ol>
+            <ol type="a">
+                <h5>Type = a</h5>
+                <li>strawberries</li>
+                <li>mangoes</li>
+                <li>watermelons</li>
+                <li>pineapples</li>
+                <li>peaches</li>
+            </ol>
+            <ol type="i">
+                <h5>Type = I</h5>
+                <li>cherries</li>
+                <li>plums</li>
+                <li>lemons</li>
+                <li>kiwis</li>
+                <li>avocados</li>
+            </ol>
+        </div>
+
+        <div class="List-wrapper unorder">
+            <h3>UnOrdered List Example</h3>
+            <ul>
+                <h5>Type = default</h5>
+                <li>Papaya</li>
+                <li>Orange</li>
+                <li>Melon</li>
+                <li>Dates</li>
+                <li>Pear</li>
+            </ul>
+            <ul type="square">
+                <h5>Type = square</h5>
+                <li>strawberries</li>
+                <li>mangoes</li>
+                <li>watermelons</li>
+                <li>pineapples</li>
+                <li>peaches</li>
+            </ul>
+            <ul type="circle">
+                <h5>Type = circle</h5>
+                <li>cherries</li>
+                <li>plums</li>
+                <li>lemons</li>
+                <li>kiwis</li>
+                <li>avocados</li>
+            </ul>
+        </div>
+
+        <div class="List-wrapper desc">
+            <h3>Description List Example</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>A standard markup language for creating web pages.</dd>
+                <dt>CSS</dt>
+                <dd>A stylesheet language used for describing the presentation of a document written in HTML or XML.
+                </dd>
+                <dt>JavaScript</dt>
+                <dd>A programming language commonly used to create interactive effects within web browsers.</dd>
+                <dt>Java</dt>
+                <dd>A widely used programming language designed for flexibility and portability.</dd>
+            </dl>
+        </div>
+
+        <div class="nested-list">
+            <h2>Ordered List with Unordered Sub-Items</h2>
+            <ol>
+                <li>Introduction
+                    <ul>
+                        <li>Overview</li>
+                        <li>Purpose</li>
+                    </ul>
+                </li>
+                <li>Main Content
+                    <ul>
+                        <li>Section 1
+                            <ul>
+                                <li>Subsection 1.1</li>
+                                <li>Subsection 1.2</li>
+                            </ul>
+                        </li>
+                        <li>Section 2</li>
+                    </ul>
+                </li>
+                <li>Conclusion
+                    <ul>
+                        <li>Summary</li>
+                        <li>Future Work</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+
+
+
+        <div class="nested-list">
+            <h2>Ordered List with Nested Unordered Lists</h2>
+            <ol>
+                <li>Fruits
+                    <ul>
+                        <li>Citrus
+                            <ul>
+                                <li>Oranges</li>
+                                <li>Lemons
+                                    <ul>
+                                        <li>Common Lemons</li>
+                                        <li>Sweet Lemons</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Berries
+                            <ul>
+                                <li>Strawberries</li>
+                                <li>Blueberries</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Vegetables
+                    <ul>
+                        <li>Leafy Greens
+                            <ul>
+                                <li>Spinach</li>
+                                <li>Kale</li>
+                            </ul>
+                        </li>
+                        <li>Root Vegetables
+                            <ul>
+                                <li>Carrots</li>
+                                <li>Potatoes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="nested-list">
+            <h2>Unordered List with Nested Ordered Lists</h2>
+            <ul>
+                <li>Animals
+                    <ol>
+                        <li>Mammals
+                            <ol>
+                                <li>Lions</li>
+                                <li>Elephants</li>
+                            </ol>
+                        </li>
+                        <li>Birds
+                            <ol>
+                                <li>Eagles</li>
+                                <li>Parrots
+                                    <ol>
+                                        <li>Macaws</li>
+                                        <li>Cockatiels</li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>Reptiles
+                    <ol>
+                        <li>Snakes</li>
+                        <li>Lizards</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+        <div class="nested-list">
+            <h2>Description List with Nested Lists</h2>
+            <dl>
+                <dt>Computers</dt>
+                <dd>Devices that process data and perform calculations.</dd>
+                <dd>
+                    <ul>
+                        <li>Laptops
+                            <ul>
+                                <li>MacBooks</li>
+                                <li>Dell XPS</li>
+                            </ul>
+                        </li>
+                        <li>Desktops
+                            <ul>
+                                <li>Gaming PCs</li>
+                                <li>Workstations</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </dd>
+                <dt>Smartphones</dt>
+                <dd>Portable devices with touch screens and advanced features.</dd>
+                <dd>
+                    <ul>
+                        <li>iPhones
+                            <ul>
+                                <li>iPhone 14</li>
+                                <li>iPhone SE</li>
+                            </ul>
+                        </li>
+                        <li>Android Phones
+                            <ul>
+                                <li>Samsung Galaxy</li>
+                                <li>Google Pixel</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+        </div>
+
+    </div>
+</body>
+
+</html>

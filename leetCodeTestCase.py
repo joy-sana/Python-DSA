@@ -5,23 +5,21 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        len_arr = len(prices)
-        minI = prices[0]
-        for i in range(0,len_arr):
-            if prices[i] < minI:
-                minI = prices[i]
-        if minI == len_arr-1:
+        if not prices:
             return 0
-
-        maxI = prices[minI]
-        for i in range(minI,len_arr):
-            if prices[i] > maxI:
-                maxI = prices[i]
         
-        profit = prices[maxI] - prices[minI]
-        return profit
-            
+        min_price = float('inf')  
+        max_profit = 0
+#               [7, 1, 5, 3, 6, 4]
+        for price in prices:
+            if price < min_price:
+                min_price = price
 
+            profit = price - min_price
+            if profit > max_profit:
+                max_profit = profit
+        
+        return max_profit
 
 def run_test_cases():
     solution = Solution()

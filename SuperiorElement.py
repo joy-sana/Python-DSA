@@ -1,4 +1,4 @@
-arr = [8,10,6,2,9,7]
+arr = [1,8,5,0,6]
 l = len(arr)
 max = float('-inf')
 count = 0

@@ -19,3 +19,4 @@ class Solution(object):
             s = t
             t = sum1
         return sum1
+

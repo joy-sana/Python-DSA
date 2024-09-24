@@ -27,22 +27,50 @@
 
 # print(m)
 
-nums = [2,2,1,1,1,2,2]
-d = {}
-for i in nums:
-    if i in d.keys():
-        d[i] += 1
-    else:
-        x = {i : 1}
-        d.update(x)
-print(d)
+# nums = [2,2,1,1,1,2,2]
+# d = {}
+# for i in nums:
+#     if i in d.keys():
+#         d[i] += 1
+#     else:
+#         x = {i : 1}
+#         d.update(x)
+# print(d)
 
 
+# max = float('-inf')
+# max_key = float('-inf')
+# for i in d:
+#     if d[i] > max:
+#         max = d[i]
+#         max_key = i
+#         print('val: ',max)
+# print(max_key)
+
+
+# for key, value in d.items():
+#     if value > max:
+#         max = value
+#         max_key = key
+#         # print('val: ',max)
+# print(max_key)
+    
+
+nums = [1,2]
+# l1.pop(0)
+# print(l1)
+
+l1 =[]
+nums.sort()
+print(nums)
 max = float('-inf')
-max_key = float('-inf')
-for i in d:
-    if d[i] > max:
-        max = d[i]
-        max_key = i
-        print('val: ',max)
-print(max_key)
+for i in nums:
+    if i > max:
+        max = i
+        l1.append(max)
+        print('val: ', max)
+        if len(l1) > 3:
+            l1.pop(0)
+print(l1[0])
+
+

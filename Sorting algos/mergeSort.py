@@ -18,6 +18,7 @@ def meargeTwoArray(arr1,arr2):
         j+=1
     return array
 
+
 def meargeTwoSortedArray(arr1,arr2,array):
     i = j = k = 0
     while(len(arr1) > i and len(arr2) > j):
@@ -36,6 +37,7 @@ def meargeTwoSortedArray(arr1,arr2,array):
         array[k] = arr2[j]
         j+=1
         k+=1
+
 def mergeSort(arr):
     if len(arr) <= 1:
         return 

@@ -20,3 +20,19 @@ class Solution(object):
         for i in alps:
             if alps[i] < alps2[i]:
                 return i
+
+
+        # Optimized Version
+            
+        # alps = {chr(i): 0 for i in range(ord('a'), ord('z') + 1)}
+       
+        # for i in s:
+        #     if i in alps:
+        #         alps[i] = alps[i] + 1
+
+        # for i in t:
+        #     if i in alps:
+        #         alps[i] = alps[i] - 1
+        #         if alps[i] < 0:
+        #             return i
+        

@@ -56,21 +56,33 @@
 # print(max_key)
     
 
-nums = [1,2]
-# l1.pop(0)
-# print(l1)
+# nums = [1,2]
+# # l1.pop(0)
+# # print(l1)
 
-l1 =[]
-nums.sort()
-print(nums)
-max = float('-inf')
-for i in nums:
-    if i > max:
-        max = i
-        l1.append(max)
-        print('val: ', max)
-        if len(l1) > 3:
-            l1.pop(0)
-print(l1[0])
+# l1 =[]
+# nums.sort()
+# print(nums)
+# max = float('-inf')
+# for i in nums:
+#     if i > max:
+#         max = i
+#         l1.append(max)
+#         print('val: ', max)
+#         if len(l1) > 3:
+#             l1.pop(0)
+# print(l1[0])
+
+s = 'hello'
+alps = {chr(i): i for i in range(ord('a'), ord('z') + 1)}
 
 
+val = 0
+sum = 0
+for j in range(0,len(s)-1):
+  
+    val = alps[s[j]] - alps[s[j+1]]
+    sum  += val
+    print("Index :",j,"val; ",val,"sum: ",sum)
+    
+print(sum)

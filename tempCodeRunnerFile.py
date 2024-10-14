@@ -1,1 +1,1 @@
-  for k,j in frequnc
+Tes1234

@@ -57,3 +57,9 @@ else:
     final = 0 + numeric + capital + low + repeat + size
 
 print(final)
+
+
+# baper am iran haji
+# bakso karkhana
+# 2 chele 1 Meye 
+# dokhin nayabaz mosjid er kache

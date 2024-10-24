@@ -59,7 +59,4 @@ else:
 print(final)
 
 
-# baper am iran haji
-# bakso karkhana
-# 2 chele 1 Meye 
-# dokhin nayabaz mosjid er kache
+# 

@@ -2,6 +2,8 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
+        
 def push(top, n):
     newnode = Node(n)
     newnode.next = top
@@ -22,6 +24,7 @@ def display(top):
     while(temp):
         print(temp.data)
         temp = temp.next
+
 top = None
 while True:
     print("**** Main Menu ****")

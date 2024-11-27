@@ -5,7 +5,7 @@ max = float("-inf")
 for i in words:
     if len(i) > max:
         max = len(i)
-        word = i
+        word =i
 
 print(word)
 
